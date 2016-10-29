@@ -11,8 +11,8 @@ int main(){
   printf("size: %lld\n",file->st_size);
   printf("permissions: %o\n",file->st_mode);
   //printf("last accessed: %d\n",file->st_atime);
-  struct tm *accessed = localtime(&(file->st_atime));
-  printf("%d-%d-%d\n",accessed->tm_year,accessed->tm_mon,accessed->tm_mday);
+  //struct tm *accessed = localtime(&(file->st_atime));
+  printf("%s\n",asctime(localtime(&(file->st_atime))));
   free(file);
   return 0;
 }
