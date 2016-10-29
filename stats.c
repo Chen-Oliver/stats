@@ -10,9 +10,7 @@ int main(){
   stat("testfile",file);
   printf("size: %lld\n",file->st_size);
   printf("permissions: %o\n",file->st_mode);
-  //printf("last accessed: %d\n",file->st_atime);
-  //struct tm *accessed = localtime(&(file->st_atime));
-  printf("%s\n",asctime(localtime(&(file->st_atime))));
+  printf("last accessed: %s\n",asctime(localtime(&(file->st_atime))));
   free(file);
   return 0;
 }
