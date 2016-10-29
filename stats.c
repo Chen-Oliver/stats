@@ -9,7 +9,7 @@ int main(){
   struct stat *file = (struct stat*)malloc(sizeof(struct stat));
   stat("testfile",file);
   printf("size: %lld\n",file->st_size);
-  printf("permissions: %o\n",file->st_mode);
+  printf("permissions: %o\n",(file->st_mode)%512);
   printf("last accessed: %s\n",asctime(localtime(&(file->st_atime))));
   free(file);
   return 0;
