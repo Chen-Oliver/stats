@@ -38,7 +38,7 @@ void convertPermissions(int per){
 }
 int main(){
   struct stat *file = (struct stat*)malloc(sizeof(struct stat));
-  stat("a.out",file);
+  stat("makefile",file);
   convert(file->st_size);
   //printf("size: %lld\n",file->st_size);
   //printf("permissions: %o\n",(file->st_mode)%512);
